@@ -1,2 +1,1 @@
-# JQueryTaskBoard
-Module 5 Challenge
+# Task Board Starter Code

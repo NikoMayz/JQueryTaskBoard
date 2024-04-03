@@ -1,0 +1,43 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+.swim-lanes {
+  min-height: 60vh;
+}
+
+.task-card {
+  margin: 0 auto;
+  width: 95%;
+  height: 95%;
+  border: 1px solid black;
+  position: relative;
+
+}
+
+.task-card-on-time {
+  background-color: beige;
+
+}
+
+.task-card-late {
+  background-color: red;
+  color: beige;
+
+}
+
+.task-card-soon {
+  background-color: yellow;
+
+}
+
+
+.task-card:hover {
+  cursor: grab;
+}
+
+.modal-row {
+
+  margin: 0 auto;
+}
