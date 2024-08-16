@@ -24,85 +24,78 @@
     <div class="text-center mb-5">
       <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
     </div>
-    <!-- Todo: Create a modal with a form to add tasks...formModal used to manipulate module-->
-    <div class="modal fade" id="formModal" role="dialog">
+
+    <!-- Modal for adding tasks -->
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-
-
-        <!-- create class for task header which should say Add task, ability to close task should be in header-->
-        <div  class="modal-content">
+        <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-bs-toggle="modal">&times;</button>
-            <h4 class="modal-title">Add Task</h4>
+            <h5 class="modal-title" id="formModalLabel">Add Task</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <form>
-          <div class="row modal-row">
+            <div class="row modal-row">
               <div class="col-sm">
                 <div class="task-data">
                   <label for="title">Task Title</label>
-                  <input name="task-title" type="text" required minlength="2" maxlength="30"></input>
+                  <input id="title" name="task-title" type="text" required minlength="2" maxlength="30">
                 </div>
               </div>
 
               <div class="col-sm">
                 <div class="task-data">
                   <label for="date">Task Due Date</label>
-                  <input name="due-date" type="date" min="2000-01-01" max="2100-01-01"></input>
+                  <input id="date" name="due-date" type="date" min="2000-01-01" max="2100-01-01">
                 </div>
               </div>
-          </div>
+            </div>
 
-          <div class="row modal-row">
+            <div class="row modal-row">
               <div class="task-data">
-                <label for="Task Description">Task Description</label>
-                <input name="task-description" type="text" required></input>
+                <label for="description">Task Description</label>
+                <input id="description" name="task-description" type="text" required>
               </div>
               <div class="modal-footer">
-                <button id="generateTaskIdBtn" type="submit" class="btn btn-default" onclick="handleAddTask()">Add Task</button>
+                <button id="generateTaskIdBtn" type="submit" class="btn btn-success" onclick="handleAddTask(event)">Add Task</button>
               </div>
-          </div>
-        </form>
+            </div>
+          </form>
         </div>
       </div>
-      <!-- Form should ask user for Task Title, Task Due Date and Task Description  -->
-      <!-- A submit button which reads add task -->
     </div>
 
-      <div class="row swim-lanes text-center justify-content-between">
-        <div class="col-12 col-lg-4 d-flex">
-          <div id="to-do" class="card border-light mb-3 lane flex-grow-1">
-            <div class="card-header bg-white">
-              <h2 class="card-title mb-1">To Do</h2>
-            </div>
-            <div class="card-body bg-light">
-              <div id="todo-cards">
-              
-              </div>
-            </div>
+    <div class="row swim-lanes text-center justify-content-between">
+      <div class="col-12 col-lg-4 d-flex">
+        <div id="to-do" class="card border-light mb-3 lane flex-grow-1">
+          <div class="card-header bg-white">
+            <h2 class="card-title mb-1">To Do</h2>
           </div>
-        </div>
-        <div class="col-12 col-lg-4 d-flex">
-          <div id="in-progress" class="card border-light mb-3 lane flex-grow-1">
-            <div class="card-header bg-white">
-              <h2 class="card-title mb-1">In Progress</h2>
-            </div>
-            <div class="card-body bg-light">
-              <div id="in-progress-cards"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-4 d-flex">
-          <div id="done" class="card border-light mb-3 lane flex-grow-1">
-            <div class="card-header bg-white">
-              <h2 class="card-title mb-1">Done</h2>
-            </div>
-            <div class="card-body bg-light">
-              <div id="done-cards"></div>
-            </div>
+          <div class="card-body bg-light">
+            <div id="todo-cards"></div>
           </div>
         </div>
       </div>
- 
+      <div class="col-12 col-lg-4 d-flex">
+        <div id="in-progress" class="card border-light mb-3 lane flex-grow-1">
+          <div class="card-header bg-white">
+            <h2 class="card-title mb-1">In Progress</h2>
+          </div>
+          <div class="card-body bg-light">
+            <div id="in-progress-cards"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 d-flex">
+        <div id="done" class="card border-light mb-3 lane flex-grow-1">
+          <div class="card-header bg-white">
+            <h2 class="card-title mb-1">Done</h2>
+          </div>
+          <div class="card-body bg-light">
+            <div id="done-cards"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
@@ -111,8 +104,8 @@
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-
     <script src="./assets/js/script.js"></script>
+  </div>
 </body>
 
 </html>
